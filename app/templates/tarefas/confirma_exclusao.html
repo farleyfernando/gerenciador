@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="card mb-3">
+  <div class="card-header">
+    <h6>Confirmar a Exclusão! </h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> Titulo: {{tarefa.titulo}}</h5>
+    <p class="card_text"> Descrição: {{tarefa.descricao}}</p>
+    <hr>
+    <form method="post"> {% csrf_token %}
+        <button class="btn btn-danger"  type="submit">Remover</button>
+        <a href="{% url 'listar_tarefas' %}"> <input type="button" class="btn btn-primary" value="Cancelar"></a>
+    </form>
+  </div>
+</div>
+{% endblock conteudo %}
